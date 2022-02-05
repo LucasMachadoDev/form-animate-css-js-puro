@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-color: #7159c1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+}
+
+.form__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form__wrapper {
+    z-index: 1;
+}
+
+.form__title {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 1.25rem 0;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.form__login {
+    margin: 1.25rem 0;
+    background-color: #ffffff;
+    padding: 1.875rem 1.563rem;
+    border-radius: .3rem;
+    animation: fade .5s ease-in;
+    overflow: hidden;
+}
+
+.input__block {
+    margin-bottom: 1.25rem;
+}
+
+.input__block:nth-child(1) {
+    animation: move 1s;
+}
+
+.input__block:nth-child(2) {
+    animation: move 1s .2s backwards;
+}
+
+.label__login {
+    font-size: .9rem;
+    color: #483d8b;
+}
+
+.input__login {
+    width: 100%;
+    display: block;
+    margin-top: .5rem;
+    padding: .438rem;
+    font-size: 1rem;
+    color: #7159c1;
+    border: .06rem solid #ccddef;
+    border-radius: .13rem;
+    outline-color: #7159c1;
+}
+
+.btn__login {
+    cursor: pointer;
+    display: block;
+    min-width: 7.5rem;
+    border: none;
+    background: #7159c1;
+    color: #ffffff;
+    border-radius: 1.563rem;
+    margin: auto;
+    padding: .438rem;
+    animation: move .5s .6s backwards;
+}
+
+.squares {
+    overflow: hidden;
+}
+
+.squares__item {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, .15);
+    display: block;
+    position: absolute;
+    bottom: -3rem;
+    animation: rotate 5s linear infinite alternate;
+}
+
+.formHide {
+    animation: down .5s forwards cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.validate__error {
+    animation: shake .5s .2s 2 linear, fade paused;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateX(-2.188rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes down {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(7rem);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-1rem);
+    }
+
+    50% {
+        transform: translateX(1rem);
+    }
+
+    75% {
+        transform: translateX(-1rem);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50rem) rotate(360deg);
+    }
+}
